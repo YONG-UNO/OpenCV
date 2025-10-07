@@ -25,7 +25,7 @@ public:
     void update();
 
     // 获取当前帧率（对外提供只读访问）
-    double getFPS () const;
+    double getFPS() const;
 };
 
 
