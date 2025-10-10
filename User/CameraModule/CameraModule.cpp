@@ -4,9 +4,8 @@
 
 #include "CameraModule.h"
 
-#include <opencv2/opencv.hpp>  // 引入opencv核心库
 
-// 四个核心函数,构成操作摄像头的完整流程:
-// 1. initCamera:initialize the camera
-// 2. setCameraParams: set the camera params(参数)(resolution,rate)
-// 3. readCameraFrame: read a frame of image
+bool initCamera(VideoCapture& cap, int camera_id, int backend) {
+    // 打开摄像头:参数为设备id和后端API (默认V4L2,适用于Linux)
+    if (!cap.open(cmaera))
+}

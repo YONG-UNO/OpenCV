@@ -15,7 +15,9 @@ message(STATUS "OpenCV include directories: ${OpenCV_INCLUDE_DIRS}")
 # 添加可执行文件
 add_executable(opencv main.cpp
         User/FPSModule/FPSModule.cpp
-        User/FPSModule/FPSModule.h)
+        User/FPSModule/FPSModule.h
+        User/CameraModule/CameraModule.cpp
+        User/CameraModule/CameraModule.h)
 
 # 链接 OpenCV 库到可执行文件
 target_link_libraries(opencv PRIVATE ${OpenCV_LIBS})
