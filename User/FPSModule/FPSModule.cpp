@@ -27,10 +27,17 @@ void FPSCalculator::update() {
         // .count(): extarct raw values from a time interval with units
         auto duration = duration_cast<microseconds>(current_time - last_time).count();
 
-    // frame rate = frame count / time(s)
-    // since duration is milliseconds, it needs to be divided by 1000 to
-    // seconds, and the formula is transformed as(公式转换为) (frame count * 1000) / milliseconds
-    fps = (frame_count * 1000.0) / duration;
+        // frame rate = frame count / time(s)
+        // since duration is milliseconds, it needs to be divided by 1000 to
+        // seconds, and the formula is transformed as(公式转换为) (frame count * 1000) / milliseconds
+        fps = (frame_count * 1000.0) / duration;
 
+        // 重置计数器和时间戳
+        frame_count = 0;
+        last_time = current_time;
     }
+}
+// 返回当前帧率
+double FPSCalculator::getFPS() const {
+    return fps;
 }
